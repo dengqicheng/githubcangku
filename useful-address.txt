@@ -1,0 +1,113 @@
+https://developer.apple.com/documentation  ios 开发官网
+
+
+https://developer.android.google.cn/about/versions/pie/?utm_source=androiddevtools_banner&utm_medium=website   安卓开发官网    
+
+
+http://services.gradle.org/distributions/   安卓的gradle 各版本安装包
+
+
+http://www.android100.org/      android100 学习网址
+
+
+https://blog.csdn.net/coloriy/article/details/47838623   流媒体开发之  直播实现
+
+
+https://blog.csdn.net/qq_25817651/article/details/53135685  andriod 使用cmake
+
+
+
+https://blog.csdn.net/u011068702/article/details/48850639   android平时遇见的错误总结
+
+
+https://www.cnblogs.com/smuxiaolei/p/7484678.html    git 安装与使用教程
+
+
+
+
+https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001434499190108eec0bdf14e704a09935cd112e501e31a000   javascript学习网址
+
+
+http://tool.oschina.net/  在线工具
+
+
+https://www.zybuluo.com/mdeditor#1293417  markdown 在线文档编译工具
+
+
+https://1024tools.com/   程序员工具箱
+
+https://www.zhihu.com/people/leixiaohua1020/answers   音视频技术雷霄骅知乎
+
+
+http://blog.rs1314.cn/     java
+
+https://pan.baidu.com/s/1bMMHQiIJy6sEt7pLqMzHKw   提取码：rsb5     java面试视频
+
+
+https://pan.baidu.com/s/1wAV_WUHYao94Tnsf3kO7cA  提取码：1yrc  java二维码生成
+
+
+https://developer.android.com/about/versions/pie/android-9.0-changes-28  android开发谷歌
+
+
+https://1024tools.com/ 1024程序员开发工具箱
+
+
+https://pan.baidu.com/s/1wXY8fqf2TWw8D6_dLotvKg  密码:y6av  ios
+
+
+android8.0的变更
+https://developer.android.com/about/versions/oreo/background?hl=zh-cn
+
+android开发工具   https://www.androiddevtools.cn/
+
+兼职  
+码客帮：https://www.make8.com/
+猪八戒：https://www.make8.com/
+实现网：https://shixian.com/
+程序员客栈：http://www.52solution.com/
+coding码市：https://coding.net/
+快码：http://www.kuai.ma/
+袁团：http://edu.yuantuan.com/
+解放号：https://www.jointforce.com/
+
+IDA 反汇编工具介绍使用 
+ https://blog.csdn.net/pengyan0812/article/details/43988171
+https://blog.csdn.net/lanyang123456/article/details/56497264
+
+
+gradle 配置 https://blog.csdn.net/a814057962/article/details/77371411
+
+
+关于build.gradle的配置信息
+https://blog.csdn.net/sinat_34383316/article/details/70226706
+
+handler 处理原理
+https://blog.csdn.net/qq_34829270/article/details/87878585
+
+
+内容提供者
+https://cloud.tencent.com/developer/article/1384732
+
+web跨域
+https://cloud.tencent.com/developer/article/1183034
+
+linux的rps原理
+https://blog.csdn.net/notbaron/article/details/79630773
+
+markdown  常用符号
+https://www.zybuluo.com/mdeditor#1293417
+
+混合打包
+https://blog.csdn.net/itzhongzi/article/details/70313302
+
+
+Tomtact服务器介绍
+https://blog.csdn.net/iaiti/article/details/45308383
+
+
+Apache Http  Server和Tomcat区别
+https://blog.csdn.net/huangtingyu/article/details/3429789
+
+音频采样
+https://blog.csdn.net/hlj_include/article/details/52131620
