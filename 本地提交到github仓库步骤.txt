@@ -1,0 +1,7 @@
+1.在相应的仓库用git bash 进入
+2. git add .
+3. git commit -m "解释提交内容"
+4. git remote add origin  github的项目链接  在github相应的项目的链接点击下载会有弹窗
+5. git push -u origin master  将本地提交到master分支
+
+也可以用github对应项目中的upload files 按钮手动选择文件夹
