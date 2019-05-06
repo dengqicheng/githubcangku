@@ -1,0 +1,219 @@
+TRTC后续需求、bug请提到新的项目
+http://tapd.oa.com/LiteAV_TRTC/bugtrace/bugreports/my_view
+
+http://tapd.oa.com/Qcloud_MLVB/markdown_wikis/#1010146251007880917
+终端研发中心
+
+api3.0接口测试网址  https://console.cloud.tencent.com/api/explorer?Product=vod&Version=2018-07-17&Action=ApplyUpload&SignVersion=
+
+
+腾讯x5内核 https://x5.tencent.com/tbs/index.html
+
+腾讯云社区  https://cloud.tencent.com/developer/devdocs
+
+faq  https://faq.qcloudtrtc.com/ 
+
+错误码  https://github.com/zhaoyang21cn/iLiveSDK_Android_LiveDemo/blob/master/doc/ILiveSDK/avsdkErr.md 
+
+API3.0 错误码 https://cloud.tencent.com/document/api/213/10146
+ 
+
+视频云运营网址   http://video.isd.com/live/flow_monitor
+  
+
+星云工单   https://qcloud.oa.com/ticket/index.php/dashboard/content_ticket/2019031416083220
+
+
+
+wiki首页视频云  http://tapd.oa.com/vcloud_clientsdksupport/markdown_wikis/#1020379442008356991
+
+
+
+liteAVSDK API文档 http://imgcache.qq.com/open/qcloud/video/act/liteav_android_doc/index.html
+                  http://imgcache.qq.com/open/qcloud/video/act/liteav_ios_doc/index.htm
+
+
+腾讯云官方 https://github.com/TencentCloud     https://github.com/tencentyun
+
+腾讯视频云移动直播 https://github.com/TencentVideoCloudMLVBDev  
+
+直播后台 直播后台 API文档： 文档： https://cloud.tencent.com/document/api/267/13507
+
+腾讯视频云互动直播 https://github.com/zhaoyang21cn
+
+
+腾讯云所有服务端接口列表都在这里 https://cloud.tencent.com/document/api
+
+云端混流的 json分别代表什么意思   https://cloud.tencent.com/document/product/267/8832#.E9.80.9A.E8.BF.87-post-.E6.96.B9.E6.B3.95.E4.BC.A0.E9.80.92.E6.B7.B7.E6.B5.81-body
+
+
+
+互动直播登录步骤 https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/log.md 
+
+互动直播随心播
+https://github.com/zhaoyang21cn/iLiveSDK_Android_Suixinbo
+
+https://github.com/zhaoyang21cn/iLiveSDK_iOS_Suixinbo
+
+互动直播随心播ios  跨房连麦
+https://github.com/zhaoyang21cn/iLiveSDK_iOS_Suixinbo/blob/master/doc/%E8%B7%A8%E6%88%BF%E8%BF%9E%E9%BA%A6.md
+
+互动直播安卓demo
+https://github.com/zhaoyang21cn/iLiveSDK_Android_LiveDemo
+
+互动直播版本说明
+https://github.com/zhaoyang21cn/iLiveSDK_Android_LiveDemo/blob/master/doc/ILiveSDK/release%20note.md
+
+
+互动直播github帮助说明  https://github.com/zhaoyang21cn/ilivesdk_help
+
+关于callsdk
+https://github.com/zhaoyang21cn/iLiveSDK_Help
+
+
+码云   https://gitee.com/v4  小程序音视频   https://gitee.com/vqcloud/webrtc-samples/blob/master/pushStream/js/index.js  
+
+
+PC端音视频   https://gitee.com/vqcloud/PC_TRTC   
+
+
+音视频
+https://github.com/zhaoyang21cn/Android_TRTC
+https://github.com/zhaoyang21cn/iOS_TRTC
+
+音视频旧版文档
+
+文档目录在官网上隐藏掉了，这里有一个所有链接的目录 https://docs.qq.com/doc/DVnJYTm9GWU9EdG54
+另外，产品做了一个内测申请页面  https://cloud.tencent.com/apply/p/ajfd2ucmiht
+
+音视频旧版日志
+https://cloud.tencent.com/document/product/647/32267
+
+
+旧版质量控制
+云上环境 ：https://avq.avc.qcloud.com/qcloud/
+imsdk通道 ：https://avq.avc.qcloud.com/monitor.html
+
+
+音视频小程序带roomservice
+https://github.com/TencentVideoCloudMLVBDev/MiniProgram
+
+星云工单
+https://qcloud.oa.com/ticket/index.php/dashboard/content_ticket/2019031416083220
+
+web端音视频测试链接
+https://sxb.qcloud.com/webrtc-samples/
+
+
+trtcsdk新音视频
+
+https://github.com/tencentyun/TRTCSDK
+
+https://github.com/tencentyun/TRTCSDK/releases
+
+
+新版音视频质量控制
+http://avq2.server.com/monitor/#/
+
+随心聊
+https://github.com/zhaoyang21cn/Android_Suixinliao
+imandroid源码导读
+https://cloud.tencent.com/document/product/269/3891
+ios 源码导读
+https://cloud.tencent.com/document/product/269/3890
+
+
+随心聊日志
+https://cloud.tencent.com/document/product/269/6042
+http://sxb.qcloud.com:4000/docs/云通讯模块/IMSDK日志格式说明.html
+
+
+
+
+新版本的IMSDK已经放到github了
+https://github.com/tencentyun/TIMSDK
+
+新版im的日志 卡巴
+http://211.159.132.11/app/kibana#/discover?_g=()&_a=(columns:!(_source),index:b3c50480-3ebb-11e8-b870-c7e16943b20e,interval:auto,query:(language:lucene,query:''),sort:!('@timestamp',desc))
+
+卡巴账号与密码  elastic    tencentqwe123
+
+旧版云通信android文档
+https://cloud.tencent.com/document/product/269/9231#.E5.A5.BD.E5.8F.8B.E5.A4.87.E6.B3.A8  
+
+im的demo下载地址
+https://cloud.tencent.com/product/im/developer
+
+
+云通信联调工具
+https://avc.cloud.tencent.com/im/APITester/APITester.html
+
+im染色日志查询  http://console.cloudtracer.isd.com/setting/server
+
+旧版IMSDK下载地址 IOS的
+v2 http://dldir1.qq.com/hudongzhibo/im/IM_iOS_SDK_2.7.2.zip
+v3 http://dldir1.qq.com/hudongzhibo/im/IM_iOS_SDK_3.3.2.zip
+
+
+旧版IMSDK下载地址Android的
+compile 'com.tencent.imsdk:imsdk:2.7.2.14371.14374'
+compile 'com.tencent.imsdk:imsdk:3.3.2.14370.14372'
+
+
+美颜sdk
+https://github.com/zhaoyang21cn/TILFilterSdk
+
+
+超级播放器
+ios
+https://github.com/tencentyun/SuperPlayer
+android
+https://github.com/tencentyun/TCSuperPlayer
+
+
+小直播业务后台
+https://github.com/TencentVideoCloudMLVBDev/xiaozhibo_server_php
+
+
+接口人文档
+https://docs.qq.com/sheet/BqI21X2yZIht19RK4D1rNpco0tuobZ2S4vCC4eT9n63uXmIY0IQmKC2Cjyb92FFqWc472Wfh1bTfK93Zop1b1?tab=BB08J2
+
+
+云+社区
+移动直播：https://cloud.tencent.com/developer/tag/10374?entry=ask
+实时音视频：https://cloud.tencent.com/developer/tag/10373?entry=ask
+互动直播：https://cloud.tencent.com/developer/tag/10379?entry=ask
+短视频：https://cloud.tencent.com/developer/tag/10375?entry=ask
+超级播放器：https://cloud.tencent.com/developer/tag/10855
+
+终端研发中心缺陷单
+移动直播 codeBug
+http://tapd.oa.com/Qcloud_MLVB/bugtrace/bugreports/my_view?filter=true&query_token=201901220633e80e46960356819c995f6401e431&data%5BFilter%5D%5Btitle%5D=codedog&data%5BFilter%5D%5Bstatus%5D%5B0%5D=new&data%5BFilter%5D%5Bstatus%5D%5B1%5D=reopened&data%5BFilter%5D%5Bstatus%5D%5B2%5D=in_progress&data%5BFilter%5D%5Bcustom_field_two%5D%5B0%5D=9999998&qksearch=true&perpage=20&page=4
+
+
+wiki sdk原理介绍 http://tapd.oa.com/vcloud_clientsdksupport/documents/show/1020379442000259939?file_type=word-local&file_ext=docx
+
+wiki 互动直播 http://tapd.oa.com/ILVB/markdown_wikis/#1010121071005379005
+
+wiki 云直播 http://tapd.oa.com/Cloud_Video_live_broadcast/prong/tasks
+
+腾讯文档 https://docs.qq.com/desktop/
+
+ilivesdk  api    https://zhaoyang21cn.github.io/iLiveSDK_Help/android_help/      https://zhaoyang21cn.github.io/iLiveSDK_Help/pc_help/annotated.html
+
+avsdkapi   http://imgcache.qq.com/open/qcloud/video/act/liteav_ios_doc/index.html  https://zhaoyang21cn.github.io/iLiveSDK_Help/avsdk_help/ 
+
+点播客户端上传 签名工具 https://video.qcloud.com/signature/ugcgenerate.html?_ga=1.237910144.1034136006.1535095060
+
+
+
+IM bug提交地址：http://tapd.oa.com/IM/prong/iterations/card_view?view_id=1000000000000000206&from=create&iteration_id=1020398462001016527&left_page=1#iterationId=1020398462001016527&perPage=50&filter_close=true&wallCardType=story&timespan=1552642301045
+   http://tapd.oa.com/IM/prong/stories/stories_list
+  
+
+
+TRTC bug的提交地址：http://tapd.oa.com/LiteAV_TRTC/prong/iterations/card_view#iterationId=1020403092001015813&perPage=50&filter_close=true&wallCardType=story&timespan=1552642417002
+
+  http://tapd.oa.com/LiteAV_TRTC/prong/stories/stories_list
+
+
