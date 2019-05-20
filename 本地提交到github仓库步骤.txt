@@ -5,3 +5,4 @@
 5. git push -u origin master  将本地提交到master分支
 
 也可以用github对应项目中的upload files 按钮手动选择文件夹
+ git push origin master -f

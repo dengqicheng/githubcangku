@@ -117,3 +117,18 @@ https://blog.csdn.net/niuba123456/article/details/81073639
 
 android混淆jar包  Warning: can't find referenced class。
 参考下https://blog.csdn.net/droyon/article/details/19553853
+
+visualstudiao 打包发布apk教程
+https://www.songshizhao.com/blog/blogPage/153.html
+
+Android音频处理--通过AudioRecord去保存PCM文件,进行录制，播放，停止和删除功能
+https://blog.csdn.net/qq_26787115/article/details/53078951
+
+andriod开发使用TextureView和SurfaceTexture预览Camera基础拍照demo
+https://blog.csdn.net/yanzi1225627/article/details/33313707
+
+webrtc的一些知识点
+https://www.azimiao.com/4687.html
+
+webrtc api
+https://developer.mozilla.org/zh-CN/docs/Web/API/WebRTC_API
