@@ -1,0 +1,20 @@
+java.lang.reflect包中提供了对该功能的支持。
+
+第一种  Classl.forName("类名字符串");     
+类名字符串是  "包名+类名"  返回Class的对象
+
+eg: Class c1=Class.forName("csdn.Student");
+
+第二种   先创建对象，再用对象调用getClass（）方法，实例对象.getClass().返回运行时类
+任何一个java对象都有getClass（）方法
+
+eg: Student s=new Student(); Classc2  c2=s.getClass():
+
+第三种    类名.class    返回Class 的对象  每个类都有class属性
+
+Class c3=Student.class;
+
+
+https://blog.csdn.net/jiahao1186/article/details/81676281
+
+
