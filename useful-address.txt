@@ -142,7 +142,8 @@ https://github.com/webrtc/samples
 视频直播技术详解之播放器原理
 https://blog.csdn.net/qiansg123/article/details/80125641
 
-
+java 本机接口规范文档
+https://docs.oracle.com/javase/1.5.0/docs/guide/jni/spec/jniTOC.html
 
 
 
