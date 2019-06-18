@@ -1,0 +1,157 @@
+JNI
+
+JNI是jvm中的一部分，它的存在存在就是为了打通java和native模块的桥梁
+
+
+
+用处:在平台之间移植应用，重复使用现在库，游戏计算密集型应用提升性能，使用第三方库 ffmpeg这样库, 不容被反编译  apk的java层代码很容易被反编译，而C/c++库反斌阿姨难度 大
+
+Ndk 可以在java平台编写jni 调用c
+
+Andriod系统支持七中不用的CPU架构，每一种对应着各自的应用程序二进制接口ABI定义了二进制文件(尤其是.so文件)如何运行在相应的系统平台上
+ARMv5- armeabi 
+ARMv7- armeabi-v7a
+ARMv8-arm64-v8a
+X86-x86
+MIPS-mips64
+X86_64-x86_64
+
+将本地代码编译成动态库(Windows系统下是.dll文件，如果是Linux系统下是.so文件，如果是Mac系统下是.jnilib)
+
+Java本地接口
+
+Jni的api命名比较规范，关键是要弄懂JNI的一些调用顺序
+Eg:  
+JNIExport jstring JNICALL Java_com_example_helllojni_MainActivity_stringFromJNI(JNIEnv* env,jobject this)
+
+Jstring 是返回值类型
+Java_com_example_hellojni 是包名
+
+MainActivity 是类名
+stringFromJNI 是方法名
+JNIExport 和JNICALL 是不固定保留的关键字不要修改
+
+
+
+
+
+
+
+
+JNI接口.png
+示列代码
+jdouble  Java_pkg_Cls_f_ILjava_lang_String_2(JNIEnv *env,jobject obj,jint I,jstring s)
+{
+  Const char *str=(*env)->GetStringUTFChars(env,s,0);
+   (*env)-ReleaseStringUTFChars(env,s,str);
+  return 10;
+}
+
+*env   一个接口指针
+obj  在本地方法中声明的对象引用
+i和s ：用于传递的参数
+
+jboolean   boolean
+jbyte byte 
+jchar char
+jshort short
+jint int
+jlong long
+jfloat  float
+jdouble double
+void  void
+jobject  Object
+jclass  class
+jstring String
+jbooleanArray  Boolean[]
+jobjectArray  Object[]
+jbyteArray char[]
+jshortArray short[]
+jintArray int[]
+jlongArray float[]
+jdouble double[]
+jthrowable Throwable
+ 
+JNI_CreateJavaVM（JavaVM **pvm,void **penv,void *args）
+
+JNIEnv 
+是一个线程相关的结构体，该结构体代表了Java在本地线程的执行环境
+一个JVM对应一个JavaVM结构，而一个JVM中可能创建多个java线程
+每个线程对应一个JNIEnv结构，他们保存在线程本地存储TLS中
+
+
+是一个函数表，在本地代码中拿到了JNIEnv结构，就可以在本地代码中调用Java代码
+
+JavaVM：JavaVM是Java虚拟机在JNI层的代表，JNI全局仅仅有一个
+JNIEnv：JavaVM 在线程中的代码，每个线程都有一个，JNI可能有非常多个JNIEnv；
+
+
+JNIEnv的创建
+C中 JNIInvokeInterface: JNIInvokeInterface是C语言环境中的java
+(AttachCurrentThread)(JavaVM, JNIEnv*, void) 方法  能够获得JNIEnv结构体
+
+C++中 ——_JavaVM：_JavaVM是C++中JavaVM结构体，调用jint AttachCurrentThread(JNIEnv** p_env, void* thr_args) 方法，能够获取JNIEnv结构体；
+
+
+JNIEnv的释放
+
+C 中释放：调用JavaVM结构体JNIInvokeInterface中的(DetachCurrentThread)(JavaVM)方法，能够释放本线程的JNIEnv
+C++ 中释放：调用JavaVM结构体_JavaVM中的jint DetachCurrentThread(){ return functions->DetachCurrentThread(this); } 方法，就可以释放 本线程的JNIEnv
+
+JNI_OnLoad
+
+JNIEXPORT jint JNICALL   JNI_OnLoad(JavaVM *vm,void *reserved)
+{
+  保存vm在本地
+}
+
+这个接口是JNI入口 参数vm一般是需要保存下来
+
+Static bool getEnv(JNIEnv **env)
+{
+  bool bRet=false;
+   do{
+
+         if(JAVAM->GetEnv((void **)env,JNI_VERSION_1_4)!=JNI_OK)
+          {
+            LOGD(“Failed to get the environment using GetEnv()”);
+               break;
+}
+
+
+
+
+
+         if(JAVAM->AttachCurrentThread(env,0)<0)
+       {
+          LOGD(“Failed to get the environment using GetEnv()”);
+               break;
+
+}
+
+       bRet=true;
+
+}while(0);
+
+ Return bRet;
+}
+
+Java 调用native 只有一种方式 function
+
+Class JClass
+{
+  Private native void cfunc();
+}
+只需要在java函数前加上native，调用的时候就自动到nativie模块中寻找对应得方法
+
+Native中的函数声明的样式是固定的Java_包名_类名_函数名,参数第一个是JNIEnv,
+第二个是jobject,如果是静态函数则是jclass;后面的参数视情况而定
+
+
+
+#include <jni.h>
+
+JNIEXPORT void JNICALL Java_JClass_cfunc(JNIEnv* env,jobject obj)
+{
+}
+Native 头文件推荐用 javah –jni 命令直接生成
