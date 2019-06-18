@@ -138,3 +138,11 @@ http://www.cnblogs.com/renjiemei1225/p/6142158.html
 
 webrtcsample
 https://github.com/webrtc/samples
+
+视频直播技术详解之播放器原理
+https://blog.csdn.net/qiansg123/article/details/80125641
+
+
+
+
+
