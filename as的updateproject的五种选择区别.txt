@@ -1,0 +1,25 @@
+update type
+Merge   合并  在B分支上执行 git merge A 后  A就被合到B上
+Rebase  编辑  在B分支上执行 git rebase A 后  效果与merge是一样的，但是A 没有，两个分支合在一起了
+Branch Default  默认配置   
+
+
+
+Clean working tree before update
+
+Using Stash  暂存  保存未提交的工作，在尝试合并任何内容之前，你应该保存你的更改若要保存未提交的更改并清理工作目录
+选择此选项 可以将更改保存在Git存储库中，这样即使在AS 之外 ，您也可以应用存储更改的修补程序,他们是有git本身生成
+git stash  git apply
+
+
+Using Shelve 搁置
+将更改存在货架上
+搁置是as内部操作，由搁置更改生成的补丁通常在as中应用
+在as之外更改也是可能，但需要额外的步骤
+
+
+
+
+
+
+
