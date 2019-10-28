@@ -1,0 +1,13 @@
+
+andriod常用方法
+http://hukai.me/android-training-course-in-chinese/basics/actionbar/setting-up.html
+
+
+
+一个程序员的博客
+https://www.cnblogs.com/zhuyp1015/archive/2016/02.html
+
+
+ios常用方法
+
+https://www.cnblogs.com/kenshincui/p/3985090.html
