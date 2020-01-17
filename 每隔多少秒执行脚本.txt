@@ -1,0 +1,22 @@
+@echo off
+set INTERVAL=10
+:Again
+echo start server
+taskkill /f /t /im jd-gui.exe
+C:
+D:
+cd D:\jdfanbianyi
+start jd-gui.exe
+timeout %INTERVAL%
+goto Again
+
+
+1.@echo off  ：关闭回显，即关闭批处理文件在DOS中一行一行命令的显示
+2.set INTERVAL=3600 ：设置间隔时间参数，单位秒，3600即一个小时
+3.:Again  ~ goto Again ：":"是一个标签，"goto"是一个跳转命令，和循环的效果一样
+4.echo start server：回显，即将echo后面的内容现在在DOS中
+5.taskkill /f /t /im demo.exe：强制关闭名为demo.exe的进程
+6.C:：回到C盘的根目录
+7.cd C:\Users\Denison\Desktop\Demo：进入后面的路径目录
+8.start demo.exe：运行当前目录中的demo.exe文件
+9.timeout %INTERVAL%：暂停命令 后面是上面设置的时间参数

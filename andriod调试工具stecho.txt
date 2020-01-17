@@ -1,0 +1,55 @@
+https://segmentfault.com/a/1190000013044096
+
+
+
+在android studio中的app的build.gradle中引入：
+
+compile 'com.facebook.stetho:stetho:1.4.2'
+
+在项目的Application中进行初始化：
+
+ @Override
+    public void onCreate() {
+        super.onCreate();
+        Stetho.initializeWithDefaults(this);//加上这句
+    }
+
+保证你的手机可以通过usb链接电脑，并且是在开发者模式的debug模式；
+
+然后打开chrome浏览器(google浏览器)；
+在浏览器的地址栏中输入下面的地址：
+chrome://inspect/#devices
+
+通过Network标签观察网络请求。
+
+importPackage(android.widget);
+importPackage(android.os);
+var handler = new Handler(Looper.getMainLooper());
+handler.post(function() { Toast.makeText(context, "Hello from JavaScript", Toast.LENGTH_LONG).show() });
+
+Stetho.initialize(Stetho.newInitializerBuilder(context)
+        .enableWebKitInspector(new InspectorModulesProvider() {
+          @Override
+          public Iterable<ChromeDevtoolsDomain> get() {
+            return new DefaultInspectorModulesBuilder(context).runtimeRepl(
+                new JsRuntimeReplFactoryBuilder(context)
+                    // Pass to JavaScript: var foo = "bar";
+                    .addVariable("foo", "bar")
+                    .build()
+            ).finish();
+          }
+        })
+        .build());
+
+
+
+可以看到app上弹出了一个toast。
+
+
+
+如果想要开启js控制台的功能，还需要添加引用
+ implementation 'com.facebook.stetho:stetho-js-rhino:1.2.0'
+
+
+
+ Toast.makeText(getApplicationContext(),"默认的Toast",Toast.LENGTH_LONG).show();

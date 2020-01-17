@@ -1,0 +1,176 @@
+雷晓华 音视频https://blog.csdn.net/leixiaohua1020/article/details/15811977
+
+重要的数据结构
+ 
+1.AVFrame
+帧结构体存储着原始的数据，比如视频帧RGB
+
+包含着数据帧的重要信息
+
+typedef struct AVFrame
+{
+
+uint8_t *data[AV_NUM_DATA_POINTERS];//原始的数据(如视频帧RGB)
+int width,height;//视频帧的宽和高
+int format; //帧的格式，视频格式在AVPixelFormat枚举，音频帧格式在 AVSampleFormat中枚举
+int key_frame; //指明是否关键帧(1是0否)
+enum AVPictureType pict_type; //帧的类型(i,p,b帧等)
+
+AVRational sample_aspect_ratio; //帧的宽高比
+int64_t pts;//时间戳，即该帧显示出来的时间
+int64_t pkt_dts;//包解码的时间
+int coded_picture_number;编码的帧序号
+int display_picture_number;//显示的帧序号
+
+//还有一些运动矢量表，参考帧表
+
+}
+
+
+2.AVPacket
+数据流分出的包，从数据流独处数据后放入的结构对象，存在于解复用之后，解码之前
+
+对于视频来讲，一个AVPacket包含刚好一个AVFrame
+
+typedef struct AVPacket｛
+
+AVBufferRef *buf;//
+int64_t pts; // 该包展示出来的时间
+int64_t dts;  //该包解码的时间
+unint8_t *data;//保存压缩编码的数据，引用的是数据缓冲区
+int size;//data的大小
+int flags; //关键帧的标志,1是关键帧
+AVPacketSideData *size_data;(AVStream中的解释)
+
+
+｝
+
+
+3.AVStream
+存储音视频流信息的结构体
+
+存储了流的重要信息
+
+typedef struct AVStream
+{
+int index;//AVFormatContext中的对应的index
+int id; //指定该格式特定的唯一ID
+AVRational time_base;//时间技术， 1/帧率 方便计算实际时间
+int64_t start_time//该流中第一帧的时间戳
+int64_t duration;//该留的持续时间
+int64_t nb_frames;//该流中包含的帧数
+AVPacketSideData *side_data //这是side data的数组，一个side data是由复用器输出的(解封装时)或者调用设定的(封装时),这样就不会存在于包packet中
+AVRational avg_frame_rate;//平均帧率
+
+
+}
+
+4.AVFormatContext
+贯穿始终的一个重要结构体，有很多承上启下的重要参数。它是负责封装与解封装的重要载体
+
+typedef struct AVFormatContext{
+const AVClass *av_class;//如果一个结构体想要支持AVOption(拥有添加其余参数的功能)
+AVInputFormat*iformat余AVOutputFormat* oformat//输入(解封装用)和输出(封装用)的参数，两者只能有一个不为空
+AVIOContext*pb;//输入和输出的缓存
+int flags;//标志位，标明一些特殊要求的属性
+unsigned int nb_streams;  //
+AVStream** streams;  //文件中所有流的列表
+Char filename[1024]; //文件名
+int64_t start_time;  //首帧的位置
+int64_t duration;  //流的时长
+int64_t bit_rate;  //比特率
+int max_delay;  //最大延迟
+int64_t probesize;  //探针大小
+int64_t max_analyze_duration;  //最大分析时长
+unsigned int max_index_size;  //每个流的最大索引
+unsigned int max_picture_buffer;  //最大的图片缓存（从硬件获取的）
+//（以上五个可能影响到程序的效率）
+enum AVCodecID video_codec_id;//视频编解码器类型ID
+enum AVCodecID audio_codec_id;//音频编解码器类型ID
+enum AVCodecID subtitle_codec_id;//字幕的编解码器类型ID
+AVCodec* video_codec;//视频编解码器
+AVCodec* audio_codec;//音频编解码器
+AVCodec* subtitle_codec;//字幕的编解码器
+
+char* codec_whitelist;  //解码器允许白名单
+char* format_whitelist;  //解复用器允许白名单
+
+
+}
+
+5.AVIOContext
+管理二进制流数据输入输出的结构体
+该结构体与缓冲相关
+
+typedef struct AVIOContext {
+    const AVClass* av_class;  //如果一个结构体想要支持AVOption（拥有添加其余参数的功能）的话，第一个成员变量必须是指向AVClass的指针
+    unsigned char* buffer;  //数据缓冲区的起始
+    int buffer_size;  //数据缓冲区的尺寸
+    unsigned char* buf_ptr;  //缓冲区当前指向的位置
+    unsigned char* buf_end;  //数据的结束位置
+    int error;  //错误码信息
+      //......
+}
+
+6.AVCodec
+存储和管理编解码器信息所用的结构体
+
+typedef struct AVCodec {
+    const char* name;  //编解码器的name（短）
+    const char* long_name;  //编解码器的long_name（长，且更有可读性）
+    enum AVMediaType type;  //类型（VIDEO、AUDIO、DATA等等）
+    enum AVCodecID id;  //每个编解码器专有的唯一ID
+    const AVRational* supported_framerates;  //存有支持的码率的数组
+    enum AVPixelFormat* pix_fmts;  //存有支持的像素格式的数组（RGB24、YUV420P等等）
+    const int* supported_samplerates;  //存有支持的（音频）采样率的数组
+    enum AVSampleFormat* sample_fmts;  //存有支持的（音频）采样格式的数组
+    const uint64_t* channel_layouts;  //存有支持的（音频）通道数的数组
+      //还有一个这样的参数struct AVCodec* next
+      //另外，是decode，close，send_frame等接口，由具体的编解码器提供
+      //......
+}
+
+7.AVCodecContext
+
+这是存有对编解码器详细描述的结构体，这个结构体非常庞大，占据了源码一千多行，对部分关键参数进行了解
+
+typedef struct AVCodecContext { 
+    const AVClass* av_class;  //如果一个结构体想要支持AVOption（拥有添加其余参数的功能）的话，第一个成员变量必须是指向AVClass的指针
+    const struct AVCodec* codec;  //所属的Codec
+    enum AVMediaType codec_type;
+    enum AVCodecID codec_id;  //与（6、AVCodec相同）
+    uint8_t* extradata;  //有些编解码器需要的可以使用的额外数据
+    int extradata_size;  //额外数据的大小
+    int64_t bit_rate;  //平均比特率
+    int bit_rate_tolerance;  //比特率可以容忍的差别
+    AVRational time_base;  //时间基数，1/帧率
+    int width, height;  //（视频）宽高
+      //还有其他很多详尽的参数，需要用到时再进行查询
+      //......
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
