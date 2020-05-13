@@ -14,3 +14,6 @@ https://www.cnblogs.com/kenshincui/p/3985090.html
 
 andriod源码
 https://www.baidu.com/link?url=Ch-38AqFI0CruTXRXobPOY5sH_Tc-XBIynxMWvZawP3SB6TCf5prPG5S01pXFrOpNUAvJTQbHaiM8G5T2WRrVK&wd=&eqid=8da3484100068b87000000065dea19bf
+
+安卓项目中so库选择
+https://www.jianshu.com/p/918149d3ef34
